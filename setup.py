@@ -11,7 +11,12 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    # 'mmgen'
+    "mmcv-full==1.5.0",
+    'mmgen'
+]
+
+setup_requirements = [
+    'pytest-runner',
 ]
 
 test_requirements = [
@@ -23,16 +28,16 @@ test_requirements = [
 setup(
     author="ZOZO NZ",
     author_email='zozonz-devops@zozo.com',
-    python_requires='>=3.6',
+    python_requires='>=3.8',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
     description="An example repo to show bugs when installing mmgeneration.",
     install_requires=requirements,
@@ -44,6 +49,7 @@ setup(
     packages=find_packages(include=['mmgeneration_pytest_example', 'mmgeneration_pytest_example.*']),
     test_suite='tests',
     tests_require=test_requirements,
+    setup_requires=setup_requirements,
     url='https://github.com/zozonz/mmgeneration_pytest_example',
     version='0.1.0',
     zip_safe=False,
